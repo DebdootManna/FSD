@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Language Voting</title>
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .voting-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .vote-btn {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: 2px solid #007bff;
+            background: white;
+            color: #007bff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .vote-btn:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .results {
+            text-align: left;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .language-name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .vote-count {
+            background: #007bff;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-radius: 5px;
+            color: #0066cc;
+            font-size: 14px;
+        }
+    </style> -->
+</head>
+<body>
+    <div class="container">
+        <h1>Vote for Your Favorite Language</h1>
+        
+        <div class="voting-buttons">
+            <button class="vote-btn" onclick="vote('JavaScript')">JavaScript</button>
+            <button class="vote-btn" onclick="vote('Python')">Python</button>
+            <button class="vote-btn" onclick="vote('Java')">Java</button>
+        </div>
+
+        <div class="results">
+            <div class="result-item">
+                <span class="language-name">JavaScript:</span>
+                <span class="vote-count" id="javascript-count">0</span>
+            </div>
+            <div class="result-item">
+                <span class="language-name">Python:</span>
+                <span class="vote-count" id="python-count">0</span>
+            </div>
+            <div class="result-item">
+                <span class="language-name">Java:</span>
+                <span class="vote-count" id="java-count">0</span>
+            </div>
+        </div>
+
+        <div class="status" id="status">
+            Click a button to vote! Results update in real-time.
+        </div>
+    </div>
+
+    <script>
+        let votes = {
+            'JavaScript': 0,
+            'Python': 0,
+            'Java': 0
+        };
+
+        function vote(language) {
+            votes[language]++;
+            updateVotes();
+            showStatus(`You voted for ${language}! Thanks for voting.`);
+        }
+
+        function updateVotes() {
+            document.getElementById('javascript-count').textContent = votes['JavaScript'];
+            document.getElementById('python-count').textContent = votes['Python'];
+            document.getElementById('java-count').textContent = votes['Java'];
+        }
+
+        function showStatus(message) {
+            document.getElementById('status').textContent = message;
+            
+            setTimeout(() => {
+                document.getElementById('status').textContent = 'Click a button to vote! Results update in real-time.';
+            }, 3000);
+        }
+
+        function simulateRealTimeVoting() {
+            const languages = ['JavaScript', 'Python', 'Java'];
+            const randomLanguage = languages[Math.floor(Math.random() * languages.length)];
+            votes[randomLanguage]++;
+            updateVotes();
+            showStatus(`Someone just voted for ${randomLanguage}!`);
+        }
+
+        setInterval(simulateRealTimeVoting, 3000);
+        updateVotes();
+    </script>
+</body>
+</html>

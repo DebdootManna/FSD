@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Weather App</title>
+    <style>
+        /* Reset and basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        /* Main container */
+        .weather-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Title styling */
+        .title {
+            color: #2d3436;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Input section */
+        .input-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .city-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .city-input:focus {
+            border-color: #0984e3;
+            box-shadow: 0 0 0 3px rgba(9, 132, 227, 0.1);
+        }
+
+        /* Button styling */
+        .get-weather-btn {
+            background: linear-gradient(45deg, #00b894, #00a085);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .get-weather-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 184, 148, 0.4);
+        }
+
+        .get-weather-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Weather display section */
+        .weather-display {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(116, 185, 255, 0.1);
+            border-radius: 15px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .weather-info {
+            font-size: 1.2rem;
+            color: #2d3436;
+        }
+
+        .temperature {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0984e3;
+            margin: 0.5rem 0;
+        }
+
+        .city-name {
+            font-size: 1.1rem;
+            color: #636e72;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-message {
+            color: #d63031;
+            font-weight: bold;
+        }
+
+        /* Loading animation */
+        .loading {
+            color: #74b9ff;
+            font-style: italic;
+        }
+
+        /* Weather icon */
+        .weather-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .weather-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="weather-container">
+    <h1 class="title">🌤️ Weather App</h1>
+
+    <div class="input-section">
+        <input
+                type="text"
+                id="cityInput"
+                class="city-input"
+                placeholder="Enter city name (e.g., Mumbai, Delhi, Bangalore)"
+                autocomplete="off"
+        >
+        <button id="getWeatherBtn" class="get-weather-btn">
+            Get Weather
+        </button>
+    </div>
+
+    <div id="weatherDisplay" class="weather-display">
+        <div class="weather-info">
+            Enter a city name and click "Get Weather" to see the temperature!
+        </div>
+    </div>
+</div>
+
+<script>
+    // Step 1: Store weather data for different cities
+    // In a real app, this would come from a weather API
+    const weatherData = {
+        // Indian cities
+        'mumbai': { temp: 28, condition: 'Humid', icon: '🌫️' },
+        'delhi': { temp: 35, condition: 'Hot', icon: '☀️' },
+        'bangalore': { temp: 24, condition: 'Pleasant', icon: '⛅' },
+        'chennai': { temp: 32, condition: 'Hot & Humid', icon: '🌡️' },
+        'kolkata': { temp: 30, condition: 'Warm', icon: '🌤️' },
+        'hyderabad': { temp: 29, condition: 'Warm', icon: '☀️' },
+        'pune': { temp: 26, condition: 'Pleasant', icon: '⛅' },
+        'ahmedabad': { temp: 38, condition: 'Very Hot', icon: '🔥' },
+        'jaipur': { temp: 36, condition: 'Hot', icon: '☀️' },
+        'surat': { temp: 33, condition: 'Hot', icon: '🌡️' },
+
+        // International cities
+        'london': { temp: 15, condition: 'Cool', icon: '🌧️' },
+        'new york': { temp: 22, condition: 'Pleasant', icon: '⛅' },
+        'tokyo': { temp: 25, condition: 'Mild', icon: '🌤️' },
+        'paris': { temp: 18, condition: 'Cool', icon: '☁️' },
+        'sydney': { temp: 20, condition: 'Pleasant', icon: '⛅' },
+        'dubai': { temp: 42, condition: 'Very Hot', icon: '🔥' },
+        'singapore': { temp: 31, condition: 'Hot & Humid', icon: '🌫️' },
+        'los angeles': { temp: 26, condition: 'Pleasant', icon: '☀️' }
+    };
+
+    // Step 2: Get references to HTML elements
+    // This connects our JavaScript to the HTML elements
+    const cityInput = document.getElementById('cityInput');
+    const getWeatherBtn = document.getElementById('getWeatherBtn');
+    const weatherDisplay = document.getElementById('weatherDisplay');
+
+    // Step 3: Function to display weather information
+    function displayWeather(city, weatherInfo) {
+        weatherDisplay.innerHTML = `
+                <div class="weather-info">
+                    <div class="weather-icon">${weatherInfo.icon}</div>
+                    <div class="city-name">${city.charAt(0).toUpperCase() + city.slice(1)}</div>
+                    <div class="temperature">${weatherInfo.temp}°C</div>
+                    <div>${weatherInfo.condition}</div>
+                </div>
+            `;
+    }
+
+    // Step 4: Function to show error message
+    function displayError(message) {
+        weatherDisplay.innerHTML = `
+                <div class="weather-info error-message">
+                    ❌ ${message}
+                </div>
+            `;
+    }
+
+    // Step 5: Function to show loading state
+    function displayLoading() {
+        weatherDisplay.innerHTML = `
+                <div class="weather-info loading">
+                    🔄 Getting weather information...
+                </div>
+            `;
+    }
+
+    // Step 6: Main function to get and display weather
+    function getWeather() {
+        // Get the city name from input and convert to lowercase
+        const cityName = cityInput.value.trim().toLowerCase();
+
+        // Check if user entered a city name
+        if (cityName === '') {
+            displayError('Please enter a city name!');
+            return;
+        }
+
+        // Show loading state
+        displayLoading();
+
+        // Simulate API delay (optional - makes it feel more realistic)
+        setTimeout(() => {
+            // Check if we have weather data for this city
+            if (weatherData[cityName]) {
+                // Display the weather information
+                displayWeather(cityName, weatherData[cityName]);
+            } else {
+                // Show error if city not found
+                displayError(`Weather data not available for "${cityInput.value}". Try: Mumbai, Delhi, London, New York, etc.`);
+            }
+        }, 500); // 500ms delay
+    }
+
+    // Step 7: Add event listeners
+    // Listen for button clicks
+    getWeatherBtn.addEventListener('click', getWeather);
+
+    // Listen for Enter key press in input field
+    cityInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            getWeather();
+        }
+    });
+
+    // Step 8: Focus on input when page loads
+    window.addEventListener('load', function() {
+        cityInput.focus();
+    });
+
+    // Step 9: Clear previous results when user starts typing
+    cityInput.addEventListener('input', function() {
+        if (weatherDisplay.innerHTML.includes('error-message')) {
+            weatherDisplay.innerHTML = `
+                    <div class="weather-info">
+                        Enter a city name and click "Get Weather" to see the temperature!
+                    </div>
+                `;
+        }
+    });
+</script>
+</body>
+</html>
