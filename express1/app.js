@@ -12,3 +12,8 @@ app.get('/', (req, res) => {
   let context = {'name': 'Debdoot Manna'};
   res.render('home', context);
 });
+
+app.get('/marksheet', (req, res) => {
+  let context = {'name': 'Debdoot Manna'};
+  res.render('marksheet', context);
+});
