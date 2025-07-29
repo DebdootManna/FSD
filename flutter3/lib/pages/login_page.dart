@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'first_page.dart';
 import 'signup_page.dart';
+import 'success_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
         _passwordController.text == _dummyPassword) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const FirstPage()),
+        MaterialPageRoute(builder: (context) => const SuccessPage()),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
