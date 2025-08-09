@@ -1,16 +1,41 @@
-# assignment_1
+# Learn ABC & 123 — Flutter App
 
-A new Flutter project.
+A playful learning app to help kids learn the English alphabet (A–Z) and numbers (1–10) with a colorful UI and friendly text‑to‑speech audio.
 
-## Getting Started
+Submitted by: Debdoot Manna (Roll No: 23CS043)
 
-This project is a starting point for a Flutter application.
+## Features
+- Learn ABC: Tap any letter to hear “A for Apple”, etc., with cute emojis and bright gradient cards.
+- Learn 123: Tap numbers 1–10 to hear “1 – One”, “2 – Two”, etc.
+- Play All: Auto‑speak through the list for quick practice.
+- Kid‑friendly fonts and bouncy tap animations.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<p>
+	<img src="public/images/Simulator Screenshot - iPhone 16 Pro - 2025-08-09 at 22.13.55.png" alt="Home" width="260"/>
+	<img src="public/images/Simulator Screenshot - iPhone 16 Pro - 2025-08-09 at 22.14.12.png" alt="ABC Screen" width="260"/>
+	<img src="public/images/Simulator Screenshot - iPhone 16 Pro - 2025-08-09 at 22.14.27.png" alt="123 Screen" width="260"/>
+  
+</p>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Run locally
+
+```bash
+flutter pub get
+flutter run
+```
+
+If building for iOS after adding plugins:
+
+```bash
+flutter clean
+flutter pub get
+cd ios && pod install
+```
+
+## Tech
+- Flutter (Material 3)
+- google_fonts for kid‑friendly typography
+- flutter_tts for text‑to‑speech
+
