@@ -35,16 +35,29 @@ flutter test
 
 ## Screenshots
 
-Click any image to view full size.
+Thumbnails (click to view full size).
 
-[![Home](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.18.png)](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.18.png)
+<p align="center">
+	<a href="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.18.png">
+		<img src="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.18.png" alt="Home" width="220" />
+	</a>
+	<a href="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.31.png">
+		<img src="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.31.png" alt="Mode Grid" width="220" />
+	</a>
+	<a href="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.39.png">
+		<img src="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.39.png" alt="Practice Question 1" width="220" />
+	</a>
+  
+</p>
 
-[![Mode Grid](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.31.png)](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.31.png)
-
-[![Practice Question 1](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.39.png)](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.39.png)
-
-[![Practice Question 2](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.56.png)](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.56.png)
-
-[![Difficulty Slider](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.36.21.png)](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.36.21.png)
-
-[![Summary Screen](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.36.36.png)](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.36.36.png)
+<p align="center">
+	<a href="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.56.png">
+		<img src="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.35.56.png" alt="Practice Question 2" width="220" />
+	</a>
+	<a href="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.36.21.png">
+		<img src="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.36.21.png" alt="Difficulty Slider" width="220" />
+	</a>
+	<a href="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.36.36.png">
+		<img src="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-09%20at%2022.36.36.png" alt="Summary Screen" width="220" />
+	</a>
+</p>
