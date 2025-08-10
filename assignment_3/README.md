@@ -1,16 +1,12 @@
-# assignment_3
+# Image–Word Match (Assignment 3)
 
-A new Flutter project.
+A kid-friendly Flutter app where children drag pictures to the matching words to learn spellings.
 
-## Getting Started
+- Student: Debdoot Manna
+- College Roll No.: 23CS043
 
-This project is a starting point for a Flutter application.
+## Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+![Screenshot 1](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-10%20at%2011.46.13.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot 2](public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-10%20at%2011.46.47.png)
