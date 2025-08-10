@@ -11,20 +11,19 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:assignment_3/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('App loads and shows title and score', (
+    WidgetTester tester,
+  ) async {
     await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Title present
+    expect(find.byKey(const Key('appTitle')), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Score pill present
+    expect(find.textContaining('/'), findsWidgets);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Some draggable icons and word slots render
+    expect(find.byWidgetPredicate((w) => w is Draggable), findsWidgets);
+    expect(find.byWidgetPredicate((w) => w is DragTarget), findsWidgets);
   });
 }
