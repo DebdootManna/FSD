@@ -1,16 +1,14 @@
-# assignment_4
 
-A new Flutter project.
+# EMI Calculator
 
-## Getting Started
+This is a simple Flutter application to calculate the Equated Monthly Installment (EMI) for a loan. Enter the principal amount, annual interest rate, and tenure to get your monthly EMI instantly.
 
-This project is a starting point for a Flutter application.
+## Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+<img src="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-10%20at%2012.08.14.png" alt="EMI Calculator Screenshot 1" width="250" />
+<img src="public/images/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-10%20at%2012.09.07.png" alt="EMI Calculator Screenshot 2" width="250" />
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Author
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Debdoot Manna**  
+College Roll Number: 23CS043
