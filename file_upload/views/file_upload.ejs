@@ -4,7 +4,13 @@
     <title><%= title %></title>
 </head>
 <body>
-    <h1>Image Upload</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>Image Upload</h1>
+        <div>
+            Welcome, <%= username %>! 
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
     
     <form action="/upload" method="POST" enctype="multipart/form-data">
         <div>
