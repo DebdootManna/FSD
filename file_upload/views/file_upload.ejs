@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+    <h1>Image Upload</h1>
+    
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div>
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </div>
+    </form>
+
+    <h2>Uploaded Images</h2>
+    <div id="gallery">
+        <% if (images.length > 0) { %>
+            <% images.forEach(function(image) { %>
+                <div>
+                    <img src="<%= image %>" alt="Uploaded image" style="max-width: 300px; margin: 10px;">
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>No images uploaded yet.</p>
+        <% } %>
+    </div>
+</body>
+</html>
