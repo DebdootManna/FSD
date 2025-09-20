@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
 function App() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [date, setDate] = useState(new Date());
 
   useEffect(() => {
-    const handleMouseMove = (event) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-    };
+    const timerID = setInterval(() => tick(), 1000);
 
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+    return function cleanup() {
+      clearInterval(timerID);
     };
-  }, []);
+  });
+
+  function tick() {
+    setDate(new Date());
+  }
 
   return (
-    <div>
-      <h1>Mouse Coordinates</h1>
-      <p>X: {mousePosition.x}</p>
-      <p>Y: {mousePosition.y}</p>
+    <div className="App">
+      <header className="App-header">
+        <h1>Welcome to our page!</h1>
+        <h2>It is {date.toLocaleTimeString()}.</h2>
+        <h3>Today's date is {date.toLocaleDateString()}.</h3>
+      </header>
     </div>
   );
 }
