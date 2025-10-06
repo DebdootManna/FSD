@@ -1,0 +1,6 @@
+This is a sample log file.
+
+[2025-10-06 10:00:00] INFO: Application started.
+[2025-10-06 10:01:23] WARNING: Low memory warning.
+[2025-10-06 10:05:45] ERROR: Failed to connect to database.
+[2025-10-06 10:10:10] INFO: User 'admin' logged in.
