@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Result</title>
+</head>
+<body>
+  <h1>Calculator Result</h1>
+  <% if (typeof error !== 'undefined') { %>
+    <p style="color: red;"><%= error %></p>
+  <% } else if (typeof result !== 'undefined') { %>
+    <p>The result is: <%= result %></p>
+  <% } %>
+  <br>
+  <a href="/">Go back to calculator</a>
+</body>
+</html>
