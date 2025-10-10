@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Upload</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Upload Your Resume</h1>
+    <p>Please upload your resume in PDF format (max 2MB).</p>
+
+    <% if (typeof message !== 'undefined') { %>
+      <div class="alert <%= typeof error !== 'undefined' && error ? 'alert-danger' : 'alert-success' %>">
+        <%= message %>
+      </div>
+    <% } %>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="resume">Resume File</label>
+        <input type="file" class="form-control-file" id="resume" name="resume" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+  </div>
+</body>
+</html>
