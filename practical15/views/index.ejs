@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Library Portal</h1>
+    <% if (user) { %>
+      <p>Welcome, <%= user.name %>!</p>
+      <a href="/profile" class="btn btn-info">View Profile</a>
+      <a href="/logout" class="btn btn-danger">Logout</a>
+    <% } else { %>
+      <p>You are not logged in.</p>
+      <a href="/login" class="btn btn-primary">Login</a>
+    <% } %>
+  </div>
+</body>
+</html>
